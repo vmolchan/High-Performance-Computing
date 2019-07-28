@@ -1,0 +1,11 @@
+Determining Transmissivity Coefficients  
+Average Tractions
+  crack 1 traction 1.319254
+  crack 2 traction 1.496583
+  crack 3 traction 1.319254
+sifs for crack 1
+  1.473248 2.027327
+sifs for crack 2
+  2.043960 2.043960
+sifs for crack 3
+  2.027327 1.473248

@@ -70,10 +70,10 @@
 
  ## Testing
 
- If you would like to check to see if your solution is correct, simply run 
+ If you would like to check to see if your solution is correct, simply run
 
  ````
  bash myfind.sh > find.out
  ````
- 
- followed by the command `python test.py` at the command prompt.  A status message of `OK` indicates you have the correct answer. 
+
+ followed by the command `python test.py` at the command prompt.  A status message of `OK` indicates you have the correct answer.
