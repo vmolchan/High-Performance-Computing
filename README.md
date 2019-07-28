@@ -81,7 +81,6 @@ The UNIX command `find` was echoed with `echo` into a shell script **_myfind.sh_
 The file **sifs.txt** contains some values we want to extract.
 
 `````
-
         Determining Transmissivity Coefficients  
         Average Tractions
           crack 1 traction 1.319254
@@ -93,18 +92,14 @@ The file **sifs.txt** contains some values we want to extract.
           2.043960 2.043960
         sifs for crack 3
           2.027327 1.473248
-
-
 `````
 
 The file contains the lines _sifs for crack {number}_ before each set of values. We use a one line `grep` command to grab these values as:
 
 `````
-
         1.473248 2.027327
         2.043960 2.043960
         2.027327 1.473248
-
 `````
 
 
@@ -113,3 +108,5 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
  ## 05 - Merge Requesting
 
  Here a simple **hello.c** file is created. The purpose of this assignment is to get familiar with branches in git.
+
+ ## 06 -
