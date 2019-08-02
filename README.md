@@ -115,5 +115,5 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
  
  ## 07 - Stress and Strain
  
- This project utilizes **regualr expressions** to extract width and thickness for calculating engineering stress and strain.
+ This project utilizes **regular expressions** to extract width and thickness for calculating engineering stress and strain.
 
