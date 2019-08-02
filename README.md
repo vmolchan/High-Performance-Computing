@@ -109,4 +109,11 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
 
  Here a simple **hello.c** file is created. The purpose of this assignment is to get familiar with branches in git.
 
- ## 06 -
+ ## 06 - Bash
+ 
+ This directory is for `bashrc` and `bash_profile` configurations.
+ 
+ ## 07 - Stress and Strain
+ 
+ This project utilizes **regualr expressions** to extract width and thickness for calculating engineering stress and strain.
+
