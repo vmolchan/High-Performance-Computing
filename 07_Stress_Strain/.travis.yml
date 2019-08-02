@@ -1,0 +1,20 @@
+sudo: false
+language: python
+env:
+  - ASSIGNMENT=assignment7
+install:
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - conda install numpy nbconvert ipython 
+  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE383-HPC/${ASSIGNMENT}/contents/test.py\""
+  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE383-HPC/${ASSIGNMENT}/contents/data_private.dat\""
+script:
+  - 'if [ ! -f "./${ASSIGNMENT}.py" ]; then
+        jupyter nbconvert --to python ${ASSIGNMENT}.ipynb;
+     fi'
+  - python test.py 
