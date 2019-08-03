@@ -6,6 +6,8 @@
 3. Folder 06 is configuring `.bashrc` and `bash_profile`
 **4. 07-21 are _Python_ projects**
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{2}{3}&space;\sum_{i=1}^{\infty}&space;\gamma_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{2}{3}&space;\sum_{i=1}^{\infty}&space;\gamma_{i}" title="\frac{2}{3} \sum_{i=1}^{\infty} \gamma_{i}" /></a>
+
 ## 01 - Getting Used to GitHub
 
 ### solution.txt
