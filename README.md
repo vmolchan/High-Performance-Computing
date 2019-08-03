@@ -124,3 +124,7 @@ In `07` we explored using regular expressions to extract information from a data
 To calculate the integral, we use two numerical approximations:
 1. [Simpsons Rule](https://en.wikipedia.org/wiki/Simpson's_rule)
 2. [Trapezoidal Rule](https://en.wikipedia.org/wiki/Trapezoidal_rule)
+
+## 09 - Stress Strain Curve Plot
+
+The `Toughness()` class is further built upon by creating a `Plotter()` class inheriting from Toughness. A Plot method is included in here to create the Stress-Strain curve. The area under the curve is also displayed (as engineering toughness).
