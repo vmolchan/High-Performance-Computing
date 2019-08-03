@@ -16,6 +16,8 @@ This assignment is just for creating a simple **.txt** file using some simple UN
 
 We also got familiar with some git commands including `status`, `add`, `commit`, and  `push`
 
+wathc this [video](https://www.youtube.com/)
+
 ## 02 - Directory Manipulation
 
 This assignment furthers explores UNIX commands. Here we concatenate files with `cat`. Directories are created with `mkdir` and renamed/copied with `mv` and `cp`.
