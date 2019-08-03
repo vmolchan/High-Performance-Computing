@@ -1,0 +1,31 @@
+sudo: required
+language: python
+env:
+  - ASSIGNMENT=assignment9
+install:
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - conda install -c conda-forge opencv scikit-image numpy matplotlib nbconvert ipython
+  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE383-HPC/${ASSIGNMENT}/contents/test.py\""
+  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE383-HPC/${ASSIGNMENT}/contents/ss_plot_gold.png\""
+script:
+  - 'if [ ! -f "./${ASSIGNMENT}.py" ]; then
+        jupyter nbconvert --to python ${ASSIGNMENT}.ipynb;
+     fi'
+  - python test.py
+
+after_success:
+    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-latex-recommended texlive-pictures latexmk pgf
+    - python texify.py
+    - latexmk -pdf ${ASSIGNMENT}.tex
+    - git config --global user.email ${GIT_EMAIL}
+    - git config --global user.name ${GIT_NAME}
+    - git checkout -b travis-auto
+    - git add ${ASSIGNMENT}.pdf
+    - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER} [skip ci]"
+    - git push https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git travis-auto -f
