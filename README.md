@@ -1,4 +1,4 @@
-# High-Performance-Computing
+# High-Performance-Computing Summary
 
 ### **Note:**
 1. Folders 01-04 are for getting used to some simple UNIX commands.
@@ -117,3 +117,14 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
  
  This project utilizes **regular expressions** to extract width and thickness for calculating engineering stress and strain.
 
+## 08 - Simpsons & Trapezoid
+
+In `07` we explored using regular expressions to extract information from a data file. Now, we use those values in calculating [engineering toughness](https://en.wikipedia.org/wiki/Toughness).
+
+To calculate the integral, we use two numerical approximations:
+1. [Simpsons Rule](https://en.wikipedia.org/wiki/Simpson's_rule)
+2. [Trapezoidal Rule](https://en.wikipedia.org/wiki/Trapezoidal_rule)
+
+## 09 - Stress Strain Curve Plot
+
+The `Toughness()` class is further built upon by creating a `Plotter()` class inheriting from Toughness. A Plot method is included in here to create the Stress-Strain curve. The area under the curve is also displayed (as engineering toughness).
