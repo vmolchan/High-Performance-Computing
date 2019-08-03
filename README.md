@@ -1,4 +1,4 @@
-# High-Performance-Computing
+# High-Performance-Computing Summary
 
 ### **Note:**
 1. Folders 01-04 are for getting used to some simple UNIX commands.
