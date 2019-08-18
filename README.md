@@ -133,6 +133,18 @@ The `Toughness()` class is further built upon by creating a `Plotter()` class in
 
 The **2D Laplace** equation shows up in many places in Engineering and Physics - particularly for heat conduction and pressure diffusion.
 
-A `numba_solve()` method is added to the `Grid` class to speed up the calculation of the 2D Laplace with given boundary conditions. The `numba_solve` method calls the `iterate` method which is a _slow_ implementation of a finite difference method using for loops. the `@jit` decorator.
+A `numba_solve()` method is added to the `Grid` class in `laplace.py` to speed up the calculation of the 2D Laplace with given boundary conditions. The `numba_solve` method calls the `iterate` method which is a _slow_ implementation of a finite difference method using for loops. the `@jit` decorator.
 
-**Note:** we should not expect `jit` to be faster than `numpy` vectorization. 
+**Note:** we should not expect `jit` to be faster than `numpy` vectorization.
+
+## 10 - Solving 2D Laplace with cffi
+
+
+**Note:** here we are solving the same problem as in **assignment 10**.
+[cffi](https://cffi.readthedocs.io/en/latest/) is a C Foreign Function interface for Python.
+
+A `cffi.FFI()` instance is created.
+
+ We are able to use existing C Libraries with `dlopen()`. We can then use the `cdef` method to pass in our C function header.
+
+ We further develop our `Grid` class in `laplace.py` to implement an [API or ABI](https://cffi.readthedocs.io/en/latest/overview.html#abi-versus-api) version of the Laplace Solver with `cffi_solve_abi` and `cffi_solve_api`.
