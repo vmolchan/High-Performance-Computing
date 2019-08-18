@@ -155,3 +155,7 @@ Similar to the last two assignments, we are still solving the 2D Laplace. This t
 `SWIG` is useful for wrapping C and C++ library functions, particularly when the function headers are identical.
 
 We have two functions `iterate` and `iterate_red_black` which are written in C. A SWIG interface file `iterate.i` is written that wraps the two functions. The function declarations are in the `iterate.h` header file. We then create `swig_solve` and `swig_solve_red_black` methods in `LaplaceSolver` in `laplace.py`.
+
+## 13 - cmake
+
+Here we use CMake to automate calls to SWIG (like in assignment 12) and compiler commands.
