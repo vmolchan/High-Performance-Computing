@@ -112,9 +112,9 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
  ## 06 - bash
 
  Setting up configurations for `.bashrc` and `bash_profile`
- 
+
  ## 07 - Stress and Strain
- 
+
  This project utilizes **regular expressions** to extract width and thickness for calculating engineering stress and strain.
 
 ## 08 - Simpsons & Trapezoid
@@ -128,3 +128,11 @@ To calculate the integral, we use two numerical approximations:
 ## 09 - Stress Strain Curve Plot
 
 The `Toughness()` class is further built upon by creating a `Plotter()` class inheriting from Toughness. A Plot method is included in here to create the Stress-Strain curve. The area under the curve is also displayed (as engineering toughness).
+
+## 10 - Solving 2D Laplace with Numba
+
+The **2D Laplace** equation shows up in many places in Engineering and Physics - particularly for heat conduction and pressure diffusion.
+
+A `numba_solve()` method is added to the `Grid` class to speed up the calculation of the 2D Laplace with given boundary conditions. The `numba_solve` method calls the `iterate` method which is a _slow_ implementation of a finite difference method using for loops. the `@jit` decorator.
+
+**Note:** we should not expect `jit` to be faster than `numpy` vectorization. 
