@@ -137,7 +137,7 @@ A `numba_solve()` method is added to the `Grid` class in `laplace.py` to speed u
 
 **Note:** we should not expect `jit` to be faster than `numpy` vectorization.
 
-## 10 - Solving 2D Laplace with cffi
+## 11 - Solving 2D Laplace with cffi
 
 
 **Note:** here we are solving the same problem as in **assignment 10**.
