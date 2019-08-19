@@ -4,6 +4,7 @@
 1. Folders 01-04 are for getting used to some simple UNIX commands.
 2. Folder 05 is a simple C program.
 3. Folder 06 is configuring `.bashrc` and `bash_profile`
+
 **4. 07-21 are _Python_ projects**
 
 ## 01 - Getting Used to GitHub
@@ -159,3 +160,15 @@ We have two functions `iterate` and `iterate_red_black` which are written in C. 
 ## 13 - cmake
 
 Here we use CMake to automate calls to SWIG (like in assignment 12) and compiler commands.
+
+## 14 - Parallel Reading of Files
+
+For two indepentent data files, reading them in can be though of as an [_embarrassingly parallel_](https://en.wikipedia.org/wiki/Embarrassingly_parallel) process. We can break up the task of processing files to multiple processors. We utilize [mpi4py](https://mpi4py.readthedocs.io/en/stable/) to read in two data files in parallel. These files are then passed into the `Plotter` instance (from **09**) and the Stress Strain curve is calculated.
+
+## 15 - Parallel Integration of Stress Strain
+
+Now that we have explored reading files in parallel, we can break up the task of integreation to multiple processors. Evaluation of definite integrals is also an _embarrassingly parallel_ process.
+
+In `assignment15.py` we build out the `ParallelToughness` class which inherits from `StressStrainConverter` in **08** utilizing `mpi4py`. The process will follow a primary/secondary model (commonly referred to as master/slave). One processor will serve as the `primary` splitting data amongst the other `secondary` processors. This can be seen in the `init` method.
+
+The class methods will be executed in parallel to calculate engineering toughness.
