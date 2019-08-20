@@ -7,7 +7,7 @@
 
 **4. 07-21 are _Python_ projects**
 
-## 01 - Getting Used to GitHub
+## 01 - [Getting Used to GitHub](https://github.com/csaintvincent/High-Performance-Computing/tree/master/01_Getting_Used_to_GitHub)
 
 ### solution.txt
 
@@ -15,11 +15,11 @@ This assignment is just for creating a simple **.txt** file using some simple UN
 
 We also got familiar with some git commands including `status`, `add`, `commit`, and  `push`
 
-## 02 - Directory Manipulation
+## 02 - [Directory Manipulation](https://github.com/csaintvincent/High-Performance-Computing/tree/master/02_Directory_Manipulation)
 
 This assignment furthers explores UNIX commands. Here we concatenate files with `cat`. Directories are created with `mkdir` and renamed/copied with `mv` and `cp`.
 
-## 03 - Shell Script for Locating Files
+## 03 - [Shell Script for Locating Files](https://github.com/csaintvincent/High-Performance-Computing/tree/master/03_Finding_Files_(Shell))
 
 ### myfind.sh
 
@@ -77,7 +77,7 @@ Our first shell script to locate files from the repositories' root directory. Th
 The UNIX command `find` was echoed with `echo` into a shell script **_myfind.sh_**. The output of this command was then put into the file **_find.out_**.
 
 
-## 04 - Regular expressions
+## 04 - [Regular expressions](https://github.com/csaintvincent/High-Performance-Computing/tree/master/04_Regular_Expressions)
 
 The file **sifs.txt** contains some values we want to extract.
 
@@ -106,19 +106,19 @@ The file contains the lines _sifs for crack {number}_ before each set of values.
 
  I then `echo` the command into **parse.sh**.
 
- ## 05 - Merge Requesting
+ ## 05 - [Merge Requesting](https://github.com/csaintvincent/High-Performance-Computing/tree/master/05_Merge_Requesting)
 
  Here a simple **hello.c** file is created. The purpose of this assignment is to get familiar with branches in git.
 
- ## 06 - bash
+ ## 06 - [bash](https://github.com/csaintvincent/High-Performance-Computing/tree/master/06%20-%20bash)
 
  Setting up configurations for `.bashrc` and `bash_profile`
 
- ## 07 - Stress and Strain
+ ## 07 - [Stress and Strain](https://github.com/csaintvincent/High-Performance-Computing/tree/master/07_Stress_Strain)
 
  This project utilizes **regular expressions** to extract width and thickness for calculating engineering stress and strain.
 
-## 08 - Simpsons & Trapezoid
+## 08 - [Simpsons & Trapezoid](https://github.com/csaintvincent/High-Performance-Computing/tree/master/08_Toughness)
 
 In `07` we explored using regular expressions to extract information from a data file. Now, we use those values in calculating [engineering toughness](https://en.wikipedia.org/wiki/Toughness).
 
@@ -126,11 +126,11 @@ To calculate the integral, we use two numerical approximations:
 1. [Simpsons Rule](https://en.wikipedia.org/wiki/Simpson's_rule)
 2. [Trapezoidal Rule](https://en.wikipedia.org/wiki/Trapezoidal_rule)
 
-## 09 - Stress Strain Curve Plot
+## 09 - [Stress Strain Curve Plot](https://github.com/csaintvincent/High-Performance-Computing/tree/master/09_Stress_Strain_Curve)
 
 The `Toughness()` class is further built upon by creating a `Plotter()` class inheriting from Toughness. A Plot method is included in here to create the Stress-Strain curve. The area under the curve is also displayed (as engineering toughness).
 
-## 10 - Solving 2D Laplace with Numba
+## 10 - [Solving 2D Laplace with Numba](https://github.com/csaintvincent/High-Performance-Computing/tree/master/10_2D_Laplace_Numba)
 
 The **2D Laplace** equation shows up in many places in Engineering and Physics - particularly for heat conduction and pressure diffusion.
 
@@ -138,7 +138,7 @@ A `numba_solve()` method is added to the `LaplaceSolver` class (inheriting from 
 
 **Note:** we should not expect `jit` to be faster than `numpy` vectorization.
 
-## 11 - Solving 2D Laplace with cffi
+## 11 - [Solving 2D Laplace with cffi](https://github.com/csaintvincent/High-Performance-Computing/tree/master/11_2D_Laplace_CFFI)
 
 **Note:** here we are solving the same problem as in **assignment 10**.
 [cffi](https://cffi.readthedocs.io/en/latest/) is a C Foreign Function interface for Python.
@@ -149,7 +149,7 @@ A `cffi.FFI()` instance is created.
 
  We further develop our `LaplaceSolver` class in `laplace.py` to implement an [API or ABI](https://cffi.readthedocs.io/en/latest/overview.html#abi-versus-api) version of the Laplace Solver with `cffi_solve_abi` and `cffi_solve_api`.
 
-## 12 - Solving 2D Laplace with SWIG
+## 12 - [Solving 2D Laplace with SWIG](https://github.com/csaintvincent/High-Performance-Computing/tree/master/12_2D_Laplace_SWIG)
 
 Similar to the last two assignments, we are still solving the 2D Laplace. This time we use [SWIG](http://www.swig.org).
 
@@ -157,15 +157,15 @@ Similar to the last two assignments, we are still solving the 2D Laplace. This t
 
 We have two functions `iterate` and `iterate_red_black` which are written in C. A SWIG interface file `iterate.i` is written that wraps the two functions. The function declarations are in the `iterate.h` header file. We then create `swig_solve` and `swig_solve_red_black` methods in `LaplaceSolver` in `laplace.py`.
 
-## 13 - cmake
+## 13 - [cmake](https://github.com/csaintvincent/High-Performance-Computing/tree/master/13_Cmake)
 
 Here we use CMake to automate calls to SWIG (like in assignment 12) and compiler commands.
 
-## 14 - Parallel Reading of Files
+## 14 - [Parallel Reading of Files](https://github.com/csaintvincent/High-Performance-Computing/tree/master/14_Parallel_File_Reading_Stress_Strain)
 
 For two indepentent data files, reading them in can be though of as an [_embarrassingly parallel_](https://en.wikipedia.org/wiki/Embarrassingly_parallel) process. We can break up the task of processing files to multiple processors. We utilize [mpi4py](https://mpi4py.readthedocs.io/en/stable/) to read in two data files in parallel. These files are then passed into the `Plotter` instance (from **09**) and the Stress Strain curve is calculated.
 
-## 15 - Parallel Integration of Stress Strain
+## 15 - [Parallel Integration of Stress Strain](https://github.com/csaintvincent/High-Performance-Computing/tree/master/15_Parallel_Integration_Toughness)
 
 Now that we have explored reading files in parallel, we can break up the task of integreation to multiple processors. Evaluation of definite integrals is also an _embarrassingly parallel_ process.
 
@@ -173,7 +173,7 @@ In `assignment15.py` we build out the `ParallelToughness` class which inherits f
 
 The class methods will be executed in parallel to calculate engineering toughness.
 
-## 16 - Parallel Gauss Quadrature
+## 16 - [Parallel Gauss Quadrature](https://github.com/csaintvincent/High-Performance-Computing/tree/master/16_Parallel_Gauss_Quadrature)
 
 **Gauss Quadrature** is a numerical [method](https://en.wikipedia.org/wiki/Gaussian_quadrature) for evaluating a definite integral. We will use `fixed_quad()` in `scipy` to evaluate an arbitrary integral.
 
@@ -181,17 +181,17 @@ Splitting the data evenly across processors is not the most interesting implemen
 
 I have built out the `GaussTable` class, utilizing `send()`, `isend()`, `recv()`, and `gather()` from `mpi4py`. We can see that the lowest rank processor serves as the delegator, giving portions of the dataframe to other processors as they become available.
 
-## 17 - Data Partitioning with PyTrilinos
+## 17 - [Data Partitioning with PyTrilinos](https://github.com/csaintvincent/High-Performance-Computing/tree/master/17_Parallel_MaxValue_Epetra)
 
 Data files can be quite large. It is useful to delegate the task of reading in data across processors. There are four files in this program that will be read across processors.
 
 I have built out the `Max` class utilizing `Epetra` from [PyTrilinos](https://trilinos.github.io/). The goal is to determine the max value amongst the data files. The data will be read in parallel and an `Epetra.Map` and `Epetra.Vector` are created to store data. The `Epetra.Vector` can then be easily queried to determine the `MaxValue`.
 
-## 18 - Parallel Toughness with Epetra
+## 18 - [Parallel Toughness with Epetra](https://github.com/csaintvincent/High-Performance-Computing/tree/master/18_Parallel_Toughness_Epetra)
 
 Here a parallel consistent `EpetraParallelToughness` class is created using `Epetra.Vector`s and `Epetra.Import`. The data is distributed evenly across `NumProc`. the `SumAll` method from `Epetra.PyComm` is used to gather all the integrated portions of the engineering toughness calculation.
 
-## 19 - 1D Laplace with AztecOO
+## 19 - [1D Laplace with AztecOO](https://github.com/csaintvincent/High-Performance-Computing/tree/master/19_1D_Laplace_AztecOO)
 
 We will solve a 1D Laplace equation:
  ![equation](http://latex.codecogs.com/gif.latex?-%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20x%5E2%7D%20%3D%200)
@@ -208,7 +208,7 @@ We use `Isorropia` to load-balance this problem so that the linear system is not
 
 The `OneDimLaplace` class is built out using these packages.
 
-## 20 - Non Linear Equation with NOX
+## 20 - [Non Linear Equation with NOX](https://github.com/csaintvincent/High-Performance-Computing/tree/master/20_Non_Linear_NOX)
 
 We are solving an non linear equation ![equation](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%5E2%20u%28x%29%7D%7B%5Cpartial%20x%5E2%7D-k%20u%28x%29%5E2%20%3D%200)
 
@@ -216,7 +216,7 @@ with constant Dirchelet boundary conditions. The ![equation](http://latex.codeco
 
 The `computeF` method in `OneDimNonliear` is communicating off-processor overlapped nodal values. The argument vector `F` is then filled with the residual from the finite difference equation.
 
-## 21 - Ridge Regression Sklearn
+## 21 - [Ridge Regression Sklearn](https://github.com/csaintvincent/High-Performance-Computing/tree/master/21_Permeability_Ridge_Regression)
 
 A dataset is preprocessed and features are generated for a ridge supervised learning task. The goal is to predict `permeability` for Petroleum applications like predicting drilling siteds. Standard models use only porosity and grain size - [Kozeny-Carman](https://en.wikipedia.org/wiki/Kozeny%E2%80%93Carman_equation).
 
