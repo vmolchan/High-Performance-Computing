@@ -172,3 +172,11 @@ Now that we have explored reading files in parallel, we can break up the task of
 In `assignment15.py` we build out the `ParallelToughness` class which inherits from `StressStrainConverter` in **08** utilizing `mpi4py`. The process will follow a primary/secondary model (commonly referred to as master/slave). One processor will serve as the `primary` splitting data amongst the other `secondary` processors. This can be seen in the `init` method.
 
 The class methods will be executed in parallel to calculate engineering toughness.
+
+## 16 - Parallel Gauss Quadrature
+
+**Gauss Quadrature** is a numerical [method](https://en.wikipedia.org/wiki/Gaussian_quadrature) for evaluating a definite integral. We will use `fixed_quad()` in `scipy` to evaluate an arbitrary integral.
+
+Splitting the data evenly across processors is not the most interesting implementation of a parallel program. Instead, it would be more efficient to delegate tasks as a processor becomes available since some regions of the integral are more computationally expensive (regions with more area under the curve for a same change in x).
+
+I have built out the `GaussTable` class, utilizing `send()`, `isend()`, `recv()`, and `gather()` from `mpi4py`. We can see that the lowest rank processor serves as the delegator, giving portions of the dataframe to other processors as they become available.
