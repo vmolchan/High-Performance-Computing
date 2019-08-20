@@ -180,3 +180,40 @@ The class methods will be executed in parallel to calculate engineering toughnes
 Splitting the data evenly across processors is not the most interesting implementation of a parallel program. Instead, it would be more efficient to delegate tasks as a processor becomes available since some regions of the integral are more computationally expensive (regions with more area under the curve for a same change in x).
 
 I have built out the `GaussTable` class, utilizing `send()`, `isend()`, `recv()`, and `gather()` from `mpi4py`. We can see that the lowest rank processor serves as the delegator, giving portions of the dataframe to other processors as they become available.
+
+## 17 - Data Partitioning with PyTrilinos
+
+Data files can be quite large. It is useful to delegate the task of reading in data across processors. There are four files in this program that will be read across processors.
+
+I have built out the `Max` class utilizing `Epetra` from [PyTrilinos](https://trilinos.github.io/). The goal is to determine the max value amongst the data files. The data will be read in parallel and an `Epetra.Map` and `Epetra.Vector` are created to store data. The `Epetra.Vector` can then be easily queried to determine the `MaxValue`.
+
+## 18 - Parallel Toughness with Epetra
+
+Here a parallel consistent `EpetraParallelToughness` class is created using `Epetra.Vector`s and `Epetra.Import`. The data is distributed evenly across `NumProc`. the `SumAll` method from `Epetra.PyComm` is used to gather all the integrated portions of the engineering toughness calculation.
+
+## 19 - 1D Laplace with AztecOO
+
+We will solve a 1D Laplace equation:
+ ![equation](http://latex.codecogs.com/gif.latex?-%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20x%5E2%7D%20%3D%200)
+
+With boundary conditions ![equation](http://latex.codecogs.com/gif.latex?u%280%29%20%3D%20-1) and ![equation](http://latex.codecogs.com/gif.latex?u%28L%29%20%3D%201).
+
+Using a finite difference discretization of this equation ![equation](http://latex.codecogs.com/gif.latex?%5CDelta%20x%20%3D%201) we get a discrete equation for any given node ![equation](http://latex.codecogs.com/gif.latex?i)
+
+![equation](http://latex.codecogs.com/gif.latex?-u%28x_i%20-%201%29%20&plus;%202%20u%28x_i%29%20-%20u%28x_i%20&plus;%201%29%20%3D%200)
+
+With this, we have a linear system of equations ![equation](http://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D%20%5Cmathbf%7Bx%20%3D%20b%7D).
+
+We use `Isorropia` to load-balance this problem so that the linear system is not completely on a single processor. `AztecOO` is then used to solve the linear system of equations.
+
+The `OneDimLaplace` class is built out using these packages.
+
+## 20 -
+
+## 21 -
+
+## Project 1 -
+
+## Project 2 -
+
+## Project 3 -
