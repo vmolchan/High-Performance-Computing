@@ -208,9 +208,19 @@ We use `Isorropia` to load-balance this problem so that the linear system is not
 
 The `OneDimLaplace` class is built out using these packages.
 
-## 20 -
+## 20 - Non Linear Equation with NOX
 
-## 21 -
+We are solving an non linear equation ![equation](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%5E2%20u%28x%29%7D%7B%5Cpartial%20x%5E2%7D-k%20u%28x%29%5E2%20%3D%200)
+
+with constant Dirchelet boundary conditions. The ![equation](http://latex.codecogs.com/gif.latex?%5Cinline%20k) constant controls the strength of nonlinearity.
+
+The `computeF` method in `OneDimNonliear` is communicating off-processor overlapped nodal values. The argument vector `F` is then filled with the residual from the finite difference equation.
+
+## 21 - Ridge Regression Sklearn
+
+A dataset is preprocessed and features are generated for a ridge supervised learning task. The goal is to predict `permeability` for Petroleum applications like predicting drilling siteds. Standard models use only porosity and grain size - [Kozeny-Carman](https://en.wikipedia.org/wiki/Kozeny%E2%80%93Carman_equation).
+
+The predicted model is then evaluated for accuracy.
 
 ## Project 1 -
 
